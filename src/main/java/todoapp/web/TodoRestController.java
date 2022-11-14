@@ -1,7 +1,10 @@
 package todoapp.web;
 
 import java.util.List;
-import java.util.Map;import javax.imageio.plugins.tiff.TIFFDirectory;
+import java.util.Map;
+
+import javax.annotation.security.RolesAllowed;
+import javax.imageio.plugins.tiff.TIFFDirectory;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -27,6 +30,7 @@ import todoapp.core.todos.domain.Todo;
 
 @RestController
 @RequestMapping("/api/todos")
+@RolesAllowed("ROLE_USER")
 public class TodoRestController {
 	
 	private final Logger logger = LoggerFactory.getLogger(getClass());
